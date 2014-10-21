@@ -41,6 +41,15 @@ item_pen = {
     "description": "A basic ballpoint pen, cheap as can be."
 }
 
+item_incompletelibrarytest = {
+    "id": "blank library test",
+    
+    "name": "blank library test",
+
+    "description": "A copy of the library test, it says you should complete this."
+}
+
+
 item_phone = {
     "id": "phone",
     

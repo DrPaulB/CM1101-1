@@ -196,8 +196,25 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     for item in room_items:
         print ("TAKE " + item["id"].upper() + " to take " + item["name"])
 
-    print("")
-    print("What do you want to do?")
+    try:
+        for item in inventory:
+            x = item['id']
+
+        if "phone" in x:
+            print("CHECK TIME on your phone")
+    except:
+        return
+
+    try:
+        for item in inventory:
+            x = item['id']
+
+        if "timetable" in x:
+            print("READ TIMETABLE to find out what you're doing")
+    except:
+        return
+
+
 
 
 
@@ -334,6 +351,8 @@ def main():
 
     while True:
         # Display game status (room description, inventory etc.)
+        print ("")
+        print ("###################################################################")
         print_room(current_room)
         print_inventory_items(inventory)
 
