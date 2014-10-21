@@ -115,7 +115,7 @@ outside_home = { # The main spawn point - where we wake up
  
     "exits": {"north": "Flatmatesroom", "south": "Outside"},
  
-    "items": [item_id]
+    "items": [item_id, item_money, item_laptop]
  
 }
  
