@@ -33,7 +33,7 @@ room_hall = { #Hallway which leads to Robs/labs/Tutoroffice
     "description":
     """You find yourself in the hallway. To you every single hallway with its bleached white walls seems exactly the same and you realise you have no idea where you're actually going. As it's your first day you have become very disorientated and decide that the best course of action would be to ask the friendly PhD student approaching where exactly this hallway leads to!""",
  
-    "exits": {"east": "Robs", "south": "Labs", "west": "Tutor"},
+    "exits": {"east": "Robs", "south": "Labs", "west": "Tutor", "north": "Lecturehall"},
  
     "items": []
 }
