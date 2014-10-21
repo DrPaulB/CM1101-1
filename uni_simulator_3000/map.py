@@ -9,7 +9,7 @@ room_lecture = { #inside the lecture hall
     You see a timetable on the desk at the front of the room along with an assortment of junk left behind from other lectures.
     You also see a swiping device for your id card, you think to yourself 'I wonder if anyone actually uses those pointless things...'""",
  
-    "exits": {"north": "Library", "east": "Commonroom", "south": "Hallway", "west": "Outside"},
+    "exits": {"north": "Library", "east": "Canteen", "south": "Hallway", "west": "Outside"},
  
     "items": [item_timetable]
 }
@@ -137,6 +137,15 @@ outside_mcdonalds = {
     "items": []
  
 }
+
+room_labs = { 
+    "name": "Computer Labs",
+    "description":
+    """You are in the windows computer labs, you can see Mat in the corner of the room typing away furiously.""",
+    "exits": {"north": "Hallway"},
+    "items": [],
+    "swipe": [swipe_machine]
+}
  
 rooms = {
  
@@ -144,12 +153,12 @@ rooms = {
     "Library": room_library,
     "Hallway": room_hall,
     "Robs": room_robs,
-    "Commonroom": room_common,
     "Tutor": room_tutor,
     "Canteen": room_canteen,
     "Outside": outside,
     "Home": outside_home,
     "Flatmatesroom": room_flatmate,
     "Mcdonalds": outside_mcdonalds,
+    "Labs": room_labs,
  
 }

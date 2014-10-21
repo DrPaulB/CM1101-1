@@ -66,5 +66,10 @@ item_jd = {
     "description": """A full bottle of Jack Daniels, the name of your roommate stuck to it with a lable. You peel off the lable and it looks good as new!
     """
 }
+swipe_machine = {
+    "id": "swipe machine",
+    "name": "id card reader",
+    "description": "You can use your id card to sign in"
+}
 
 
