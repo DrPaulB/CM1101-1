@@ -21,7 +21,7 @@ room_library = { #Library
  
     "description":
     """You find yourself in the library, which you decide is unusual for someone as social as yourself.
-    The walls are lined with vast collections of books towering over you and you immediately feel like you’ll never begin to understand the classmark System,
+    The walls are lined with vast collections of books towering over you and you immediately feel like you'll never begin to understand the classmark System,
     let alone be able to complete this simple library test! Ah yes, the library test! How did you forget? You walk up to the counter and pick up a copy of the test from
     the pleasent desk workers.
     """,
@@ -36,8 +36,8 @@ room_hall = { #Hallway which leads to Robs/labs/Tutoroffice
     "name": "Hallway",
  
     "description":
-    """You find yourself in the hallway. To you every single hallway with its bleached white walls seems exactly the same and you realise you have no idea where you’re actually going.
-    As it’s your first day you have become very disorientated and decide that the best course of action would be to ask the friendly PhD student approaching where exactly this hallway leads to!""",
+    """You find yourself in the hallway. To you every single hallway with its bleached white walls seems exactly the same and you realise you have no idea where you're actually going.
+    As it's your first day you have become very disorientated and decide that the best course of action would be to ask the friendly PhD student approaching where exactly this hallway leads to!""",
  
     "exits": {"east": "Robs", "south": "Labs", "west": "Tutor"},
  
@@ -50,8 +50,8 @@ room_robs = {
     "name": "Robs' room",
  
     "description":
-    """You have arrived at Rob’s room. These two Rob’s have become infamous to you and you’ve only been here a few hours!
-    You decide now would be the perfect time to get your laptop fixed as you’ve been unable to connect to the wifi until now,
+    """You have arrived at Rob's room. These two Rob's have become infamous to you and you've only been here a few hours!
+    You decide now would be the perfect time to get your laptop fixed as you've been unable to connect to the wifi until now,
     which is essential when it comes to your study. You knock and walk on in.""", 
     "exits":  {"north": "canteen"},
  
@@ -65,7 +65,7 @@ room_tutor = {
     "name": "Your personal tutor's office",
  
     "description":
-    """It’s time for your first ever meeting with your personal tutor!
+    """It's time for your first ever meeting with your personal tutor!
     You wonder why you even bothered getting out of bed today, as this already seems pointless.
     You and your fellow peers are gathered around a table in a secluded room, and your tutor finally arrives with the pack of biscuits that he bribed you all with.""",
  
@@ -94,9 +94,9 @@ outside = {
  
     "description":
     """You have arrived at the entrance to the Queens Building! The exterior of the building seems uninviting and cold.
-    The weather does little to contradict this.. typical.
+    The weather does little to contradict this... typical.
     You find that the only way to get to and from the building is by wading through the puddle that always seems to be there, regardless of the weather slightly improving.
-    Good job you wore some waterproof clothing! Why wouldn’t you? You did come to Wales after all..""",
+    Good job you wore some waterproof clothing! Why wouldn't you? You did come to Wales after all..""",
  
     "exits": {"north": "Home", "south": "Mcdonalds", "east": "Lecturehall"},
  
@@ -125,7 +125,7 @@ room_flatmate = {
     """Just before you leave, you notice that your new flatmate has left their door unlocked.
     You approach their room with caution and realise that no one is in.
     As you go to close their door, the sunlight glistens through the window and the rays fall upon a new bottle of Jack.
-    You would love to get your hands on that.. it’s so satisfying to crack the seal on a new bottle.""",
+    You would love to get your hands on that... it's so satisfying to crack the seal on a new bottle.""",
  
     "exits": {"south": "Home"},
  
@@ -140,7 +140,7 @@ outside_mcdonalds = {
     "description":
     """You decided that venturing to McDonalds would be a much more satisfying meal, and that it would give you enough energy to get you through your first day of university!
     You pull up to the window and roll down your window... A spotty faced teenager with no life goals takes your order.
-    You shudder and think that this could be you if you don’t revise hard enough. You make a mental commitment to take shorter lunch breaks in the future.""",
+    You shudder and think that this could be you if you don't revise hard enough. You make a mental commitment to take shorter lunch breaks in the future.""",
  
     "exits": {"north": "Outside"},
  
@@ -151,7 +151,10 @@ outside_mcdonalds = {
 room_labs = { 
     "name": "Computer Labs",
     "description":
-    """You are in the windows computer labs, you can see Mat in the corner of the room typing away furiously.""",
+    """You have entered the labs and you are immediately welcomed by the sound of humming machines.
+    You take a seat and start up the computer.
+    You are given a sheet which details the activities that you are expected to carry out in order to solidify what you learnt previously in the day.
+    However, you leave feeling more confused than you already were after leaving the lecture!""",
     "exits": {"north": "Hallway"},
     "items": [],
     "swipe": [swipe_machine]
