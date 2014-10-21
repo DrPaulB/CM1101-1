@@ -11,7 +11,7 @@ room_lecture = { #inside the lecture hall
  
     "exits": {"north": "Library", "east": "Commonroom", "south": "Hallway", "west": "Outside"},
  
-    "items": [item_timetable] #timetable is not in items.py yet.
+    "items": [item_timetable]
 }
  
  
@@ -51,23 +51,12 @@ room_robs = {
     """You are leaning against the door of the systems managers' room. Inside you notice Rob Evans and Rob Davies. They
     ignore you. To the north is the Common Room.""",
  
-    "exits":  {"north": "Commonroom"},
+    "exits":  {"north": "canteen"},
  
     "items": []
 }
  
-room_common = {
- 
-    "name": "Common Room",
- 
-    "description":
-    """You are in the Common Room, you can see groups of students eating lunch, doing work
-    and socialising. To the north is the Canteen.""",
- 
-    "exits":  {"north": "Canteen"},
- 
-    "items": []
-}
+
  
 room_tutor = {
  
@@ -92,7 +81,7 @@ room_canteen = {
     """You are in the canteen, you see the lunch lady waiting for you. You can also see a till where you have to 
     pay for your food.""",
  
-    "exits":  {"south": "Commonroom"},
+    "exits":  {"south": "room_robs"},
  
     "items": []
 }
@@ -132,7 +121,7 @@ room_flatmate = {
  
     "exits": {"south": "Home"},
  
-    "items": [item_jd] #item_jd (jackdaniels) is not in items.py yet.
+    "items": [item_jd]
  
 }
  
@@ -145,7 +134,7 @@ outside_mcdonalds = {
  
     "exits": {"north": "Outside"},
  
-    "items": [] #item_jd (jackdaniels) is not in items.py yet.
+    "items": []
  
 }
  
