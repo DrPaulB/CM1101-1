@@ -55,9 +55,7 @@ item_timetable = {
     
     "name": "todays timetable",
 
-    "description": """This sheet of paper appears to have todays timetable on it. You see you have nothing planned other than your meeting with Matt at 5.00pm.
-    It does however suggest you should perhaps revise for your test later, after all. That's the only way to win... right?
-    """
+    "description": "This sheet of paper appears to have todays timetable on it. You see you have nothing planned other than your meeting with Matt at 5.00pm. It does however suggest you should perhaps revise for your test later, after all. That's the only way to win... right?"
 }
 
 item_jd = {

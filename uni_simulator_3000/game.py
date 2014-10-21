@@ -44,15 +44,14 @@ Good Luck making it through your first day.
     for x in line_1:
         print(x, end='')
         sys.stdout.flush()
-        sleep(uniform(0, 0.1))
+        sleep(uniform(0, 0))
 
 
 ### THIS IS WHERE THE POINTS TRACKER UNIT GOES
 
 
 def what_time_to_wake_up():
-    print ("")
-    print ("")
+    print ("WHAT TIME TO AWAKEN?")
     print ("")
     print ("As a newly appointed Univerity Student you have the first of many hard choices to make... Like, what time to wake up.")
     print ("")
