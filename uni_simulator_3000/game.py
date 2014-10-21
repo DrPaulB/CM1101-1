@@ -232,12 +232,15 @@ def execute_take(item_id):
     
 
 def execute_drop(item_id):
-    ###This function takes an item_id as an argument and moves this item from the player's inventory to list of items in the current room.
+    # This function takes an item_id as an argument and moves this item from the player's inventory to list of items in the current room.
     for item_dictionary in inventory: 
         if item_id == item_dictionary["id"]:
             current_room["items"].append(item_dictionary)
             inventory.remove(item_dictionary)
     
+def execute_read_timetable(items):
+    # Allows the user to read timetable
+    print(item_timetable["description"])
 
 def execute_command(command):
     # This function takes a command and executes the correct function
@@ -258,6 +261,12 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+            
+    elif command[0] == "read":
+        if len(command) > 1:
+            execute_read_timetable(command[1])
+        else:
+            print("Read what?")
 
     else:
         print("This makes no sense.")
