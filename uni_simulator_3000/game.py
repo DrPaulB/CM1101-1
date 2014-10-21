@@ -47,9 +47,9 @@ Good Luck making it through your first day.
         sleep(uniform(0, 0))
 
 
-def progresspoints(changevalue):
-    progresspoint = progresspoints + changevalue
-    return progresspoints
+def energypoints(changevalue):
+    energypoints = energypoints + changevalue
+    return energypoints
 
 def timepoints(changevalue):
     timepoints = timepoints + changevalue
@@ -105,7 +105,16 @@ def what_time_to_wake_up():
         hours_in_day = 0
     return hours_in_day
 
-
+def calculateenergy(timepoints):
+    if timepoints in [0,1,2]:
+        energy = 100
+    elif timepoints in [3, 4, 5]:
+        energy = 70
+    elif timepoints in [6,7]:
+        energy = 50
+    else:
+        energy = 20
+    return energy
 
 
 
@@ -441,9 +450,14 @@ def move(exits, direction):
 # 
 # This is the entry point of our program
 def main():
-    game_title()
-    print_introduction()
-    hours_in_day = what_time_to_wake_up() #Allows user to decide hours in day
+    # Running start up sequence, this will only happen once
+    game_title()            # Shows title
+    print_introduction()    # Shows introductory text
+    timepoints = what_time_to_wake_up() #Allows user to decide hours in day
+    intelligencepoints = 50 # Normal assumption
+    socialpoints = 20 # Hopefully users arn't socially anxious
+    energypoints = calculateenergy(timepoints)
+
 
     # Main game loop
     while True:
