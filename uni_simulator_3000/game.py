@@ -56,7 +56,7 @@ def timepoints(changevalue):
     timepoints = timepoints + changevalue
     return timepoints
 
-def intelligencepoints(changevalue):
+def intelligencepoints(intelligencepoints, changevalue):
     intelligencepoints = intelligencepoints + changevalue
     return intelligencepoints
 
