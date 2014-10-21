@@ -9,8 +9,9 @@ from time import sleep
 from random import uniform
 
 
-intelligencepoints = 50                     # Average score, doesn't change before users gameplay
-socialpoints = 20 
+#Stats stored in the following order:
+# Time, Social, Intelligence, Energy
+stats = [0, 20, 50, 0]
 
 
 def game_title():
@@ -53,24 +54,8 @@ Good Luck making it through your first day.
         sleep(uniform(0, 0.0))
 
 
-def change_e_p(energypoints, changevalue):
-    energypoints = energypoints + changevalue
-    return energypoints
-
-def chnage_t_p(timepoints, changevalue):
-    timepoints = timepoints + changevalue
-    return timepoints
-
-def intelligencepoints(i_points): #I replaced your code, you might want to make this nicer! (I didn't know how to do it properly) - Shaun
-    changevalue = 10
-
-    x = i_points + changevalue
-
-    return x
-
-def change_s_p(socialpoints, changevalue):
-    socialpoints = socialpoints + changevalue
-    return socialpoints
+def change_value(a, b):
+    return (a + b)
 
 
 
@@ -282,17 +267,13 @@ def execute_read_timetable(items):
     print(item_timetable["description"])
 
 
-def execute_check_time(command, timepoints):
+def execute_check_time(command):
     # Allows the user to check their phone for the time
     try:
         for item in inventory:
             x = item['id']
-
-        if "phone" in x:
-
-            print("You have", timepoints, "hours until your meeting with Matt")
-        else:
-            print ("How are you planning to check the time? You didn't bring your phone?")
+            if "phone" in x:
+                print("You have", stats[0], "hours until your meeting with Matt")
     except:
         print ("How are you planning to check the time? You didn't bring your phone?")
 
@@ -305,24 +286,39 @@ def execute_do(item_id): # Function is only for the library test
         item = (x['name'])
 
     if "Blank library test" in item: #checks if library test is in inventory
-        print("YES to cheat, NO to work on the test yourself.")
-        testInput = input("Would you like to cheat on the test: ") #gives you the option to cheat
+        print("""You look at the paper, feeling confused you glance up to see you friend. He suggests you copy his test.
+            You know using your better judgement you should do it properly but at the same time, cheating is quicker.
 
-        if testInput == "yes": #if you cheat, your blank test will be replaced by a completed test
+            ###################################################################
+            CHEAT THE TEST: +Social | -Intelligence | -Energy | Time -0.5 hour
+            HONESTLY COMPLETE THE TEST:  +Intelligence | -Energy | Time -1 hour
+            ###################################################################
+
+            Your friend wonders why you are taking so long to answer...
+            """)
+
+        testInput = input("Would you like to cheat on the test [Yes/No]: ") #gives you the option to cheat
+
+        if testInput.lower() == "yes": #if you cheat, your blank test will be replaced by a completed test
             inventory.remove(item_test) 
             inventory.append(item_test_c)
+            currenttime = stats[0]
+            stats[0] = currenttime-1
 
-        elif testInput == "no": 
+        elif testInput.lower() == "no": 
             inventory.remove(item_test)
             inventory.append(item_test_w)
+            currenttime = stats[0]
+            stats[0] = currenttime-1
+
 
         else:
-            print("Sorry, try again")
+            print("I didn't understand that, try again.")
 
     else:
         print("You didn't pick up the test sheet.")
 
-def execute_command(command, timepoints):
+def execute_command(command):
     # This function takes a command and executes the correct function
     if command[0] == "go":
         if len(command) > 1:
@@ -350,7 +346,7 @@ def execute_command(command, timepoints):
 
     elif command[0] == "check":
         if len(command) > 1:
-            execute_check_time(command, timepoints)
+            execute_check_time(command)
         else:
             print("Check what?")
 
@@ -396,8 +392,8 @@ def main():
 
     game_title()                                # Plays the title Askii art to the user
     print_introduction()                        # Shows introductory text explaining the story to the user
-    timepoints = what_time_to_wake_up()         # Determines what time the user wants to awake (changes difficulty of game)
-    energypoints = calculateenergy(timepoints)  # Gives the user a set amount of energy depending on their wake time
+    stats[0] = what_time_to_wake_up()         # Determines what time the user wants to awake (changes difficulty of game)
+    stats[3] = calculateenergy(stats[0])  # Gives the user a set amount of energy depending on their wake time
 
 
     while True:
@@ -411,7 +407,7 @@ def main():
         command = menu(current_room["exits"], current_room["items"], inventory)
 
         # Execute the player's command
-        execute_command(command, timepoints)
+        execute_command(command)
 
 
 
