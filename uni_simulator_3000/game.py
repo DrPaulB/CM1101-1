@@ -7,8 +7,11 @@ from gameparser import *
 import sys
 from time import sleep
 from random import uniform
+
+
 intelligencepoints = 50                     # Average score, doesn't change before users gameplay
 socialpoints = 20 
+
 def game_title():
     # Prints the title of the game in Askii art.
     
@@ -48,19 +51,19 @@ Good Luck making it through your first day.
         sleep(uniform(0, 0.0))
 
 
-def energypoints(changevalue):
+def change_e_p(energypoints, changevalue):
     energypoints = energypoints + changevalue
     return energypoints
 
-def timepoints(changevalue):
+def chnage_t_p(timepoints, changevalue):
     timepoints = timepoints + changevalue
     return timepoints
 
-def intelligencepoints(intelligencepoints, changevalue):
+def change_i_p(intelligencepoints, changevalue):
     intelligencepoints = intelligencepoints + changevalue
     return intelligencepoints
 
-def socialpoints(changevalue):
+def change_s_p(socialpoints, changevalue):
     socialpoints = socialpoints + changevalue
     return socialpoints
 
