@@ -247,15 +247,17 @@ def execute_read_timetable(items):
 
 def execute_check_time(command, timepoints):
     # Allows the user to check their phone for the time
-    for item in inventory:
-        x = item['id']
+    try:
+        for item in inventory:
+            x = item['id']
 
-    if "phone" in x:
+        if "phone" in x:
 
-        print("You have", timepoints, "hours until your meeting with Matt")
-    else:
+            print("You have", timepoints, "hours until your meeting with Matt")
+        else:
+            print ("How are you planning to check the time? You didn't bring your phone?")
+    except:
         print ("How are you planning to check the time? You didn't bring your phone?")
-
 
 
 def execute_command(command, timepoints):
