@@ -47,7 +47,22 @@ Good Luck making it through your first day.
         sleep(uniform(0, 0))
 
 
-### THIS IS WHERE THE POINTS TRACKER UNIT GOES
+def progresspoints(changevalue):
+    progresspoint = progresspoints + changevalue
+    return progresspoints
+
+def timepoints(changevalue):
+    timepoints = timepoints + changevalue
+    return timepoints
+
+def intelligencepoints(changevalue):
+    intelligencepoints = intelligencepoints + changevalue
+    return intelligencepoints
+
+def socialpoints(changevalue):
+    socialpoints = socialpoints + changevalue
+    return socialpoints
+
 
 
 def what_time_to_wake_up():
@@ -287,6 +302,7 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     for item in room_items:
         print ("TAKE " + item["id"].upper() + " to take " + item["name"])
 
+        print("")
         print("What do you want to do?")
 
     pass
@@ -422,7 +438,7 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-
+# 
 # This is the entry point of our program
 def main():
     game_title()
