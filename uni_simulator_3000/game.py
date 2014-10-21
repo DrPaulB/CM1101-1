@@ -143,7 +143,7 @@ def print_room_items(room): #Shaun George
         print(" ")
 
 
-def print_inventory_items(items): #Jason Choo
+def print_inventory_items(items): #Jason ChFoo
     # This function takes a list of inventory items and displays it nicely, in a manner similar to print_room_items().
 
     print("You have " + list_of_items(items) + "." + "\n")
@@ -221,10 +221,6 @@ def execute_go(direction): #Shaun George
 
 def execute_take(item_id):
     # This function takes an item_id as an argument and moves this item from the list of items in the current room to the player's inventory.
-    for x in current_room['items']:
-        print(x)
-
-
     for item_dictionary in current_room["items"]:
         if item_id == item_dictionary["id"]:
             current_room["items"].remove(item_dictionary)
@@ -261,7 +257,7 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
-            
+
     elif command[0] == "read":
         if len(command) > 1:
             execute_read_timetable(command[1])

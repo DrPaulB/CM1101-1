@@ -4,8 +4,7 @@ item_id = {
     "name": "id card",
 
     "description":
-    """You new shiny student ID card. Expires 1 June 2017.
-    You wonder why they have printed a suicide hotline number on it?..."""
+    """An ID Card with your name on it. You study it closer to see that is uses RFID technology, perhaps that's why they charge £20 for a new one!"""
 }
 
 item_laptop = {
@@ -14,7 +13,7 @@ item_laptop = {
     "name": "laptop",
 
     "description":
-    "It has seen better days. At least it has a WiFi card!"
+    "Your laptop seems to have fallen down the stairs a few times... And it's refusing to connect to the internet. Studying will be difficult without it."
 }
 
 item_money = {
@@ -23,7 +22,7 @@ item_money = {
     "name": "money",
 
     "description":
-    "This wad of cash is barely enough to pay your tuition fees."
+    "A few coins, really not much... Even by the standards of a student's budget."
 }
 
 item_biscuits = {
@@ -31,7 +30,7 @@ item_biscuits = {
 
     "name": "a pack of biscuits",
 
-    "description": "A pack of biscuits."
+    "description": "A pack of biscuits that have gone slightly out of date. Oh well, these will still be fine I'm sure."
 }
 
 item_pen = {
@@ -39,7 +38,7 @@ item_pen = {
     
     "name": "a pen",
 
-    "description": "A basic ballpoint pen."
+    "description": "A basic ballpoint pen, cheap as can be."
 }
 
 item_handbook = {
@@ -63,13 +62,13 @@ item_jd = {
     
     "name": "bottle of Jack Daniels",
 
-    "description": """A full bottle of Jack Daniels, the name of your roommate stuck to it with a lable. You peel off the lable and it looks good as new!
+    "description": """A full bottle of Jack Daniels, the name of your roommate stuck to it with a label. You peel off the label and it looks good as new!
     """
 }
 swipe_machine = {
     "id": "swipe machine",
     "name": "id card reader",
-    "description": "You can use your id card to sign in"
+    "description": "You can use your id card to declare your presents to certain rooms."
 }
 
 
