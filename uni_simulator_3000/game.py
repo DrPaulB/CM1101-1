@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#this is a test from sean
+
 from map import rooms
 from player import *
 from items import *
