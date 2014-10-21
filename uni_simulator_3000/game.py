@@ -244,7 +244,21 @@ def execute_read_timetable(items):
     # Allows the user to read timetable
     print(item_timetable["description"])
 
-def execute_command(command):
+
+def execute_check_time(command, timepoints):
+    # Allows the user to check their phone for the time
+    for item in inventory:
+        x = item['id']
+
+    if "phone" in x:
+
+        print("You have", timepoints, "hours until your meeting with Matt")
+    else:
+        print ("How are you planning to check the time? You didn't bring your phone?")
+
+
+
+def execute_command(command, timepoints):
     # This function takes a command and executes the correct function
     if command[0] == "go":
         if len(command) > 1:
@@ -269,6 +283,12 @@ def execute_command(command):
             execute_read_timetable(command[1])
         else:
             print("Read what?")
+
+    elif command[0] == "check":
+        if len(command) > 1:
+            execute_check_time(command, timepoints)
+        else:
+            print("Check what?")
 
     else:
         print("This makes no sense.")
@@ -319,7 +339,7 @@ def main():
         command = menu(current_room["exits"], current_room["items"], inventory)
 
         # Execute the player's command
-        execute_command(command)
+        execute_command(command, timepoints)
 
 
 
