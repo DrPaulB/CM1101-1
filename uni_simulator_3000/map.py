@@ -23,7 +23,7 @@ room_library = { #Library
  
     "exits":  {"south": "Lecturehall"},
  
-    "items": [item_incompletelibrarytest]
+    "items": [item_test]
 }
  
 room_hall = { #Hallway which leads to Robs/labs/Tutoroffice

@@ -61,9 +61,12 @@ def chnage_t_p(timepoints, changevalue):
     timepoints = timepoints + changevalue
     return timepoints
 
-def change_i_p(intelligencepoints, changevalue):
-    intelligencepoints = intelligencepoints + changevalue
-    return intelligencepoints
+def intelligencepoints(i_points): #I replaced your code, you might want to make this nicer! (I didn't know how to do it properly) - Shaun
+    changevalue = 10
+
+    x = i_points + changevalue
+
+    return x
 
 def change_s_p(socialpoints, changevalue):
     socialpoints = socialpoints + changevalue
@@ -191,7 +194,11 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
         print_exit(direction, exit_leads_to(exits, direction))
 
     for item in inv_items:
-        print ("DROP " + item["id"].upper() + " to drop your " + item["name"])
+        x = item['name']
+        if x == "Blank library test":
+            print("DO TEST to complete your library test.") #Gives the option to the user to do the test
+        else:
+            print ("DROP " + item["id"].upper() + " to drop your " + item["name"])
 
     for item in room_items:
         print ("TAKE " + item["id"].upper() + " to take " + item["name"])
@@ -252,11 +259,24 @@ def execute_take(item_id):
 
 def execute_drop(item_id):
     # This function takes an item_id as an argument and moves this item from the player's inventory to list of items in the current room.
-    for item_dictionary in inventory: 
-        if item_id == item_dictionary["id"]:
-            current_room["items"].append(item_dictionary)
-            inventory.remove(item_dictionary)
+    for x in inventory:  #Loops x through inventory
+        i = x['id'] # i is assigned to x['name']
+
+    if item_id == i: #checks if the input is equal to the "name" of the item.
+        if "copiedtest" in item_id and (current_room["name"] == 'Library'):  #checks whether the test is copied and whether the player is in the library (can only get the test graded in library)
+            inventory.remove(item_test_c) #removes test from inventory
+            testScore = 100 #if you cheat, you get a fixed 100% mark
+            print("Your score out of a 100 is: ", testScore) #prints score
+
+        elif "completedtest" in item_id and (current_room["name"] =='Library'):
+            inventory.remove(item_test_w)
+            y = intelligencepoints(0) #x is assigned to the current value of intelligencepoints
+            print("Your score out of a 100 is:", y) #grade depends on how much intelligence points you have
+    else:
+        current_room["items"].append(i) #something is buggy here, not a big issue. I'll take a look at it
+        inventory.remove(i)
     
+
 def execute_read_timetable(items):
     # Allows the user to read timetable
     print(item_timetable["description"])
@@ -276,6 +296,31 @@ def execute_check_time(command, timepoints):
     except:
         print ("How are you planning to check the time? You didn't bring your phone?")
 
+
+    
+def execute_do(item_id): # Function is only for the library test
+    """This function takes an argument and does an action relevant to the item e.g. "Do test" will make the user do the test """
+
+    for x in inventory: 
+        item = (x['name'])
+
+    if "Blank library test" in item: #checks if library test is in inventory
+        print("YES to cheat, NO to work on the test yourself.")
+        testInput = input("Would you like to cheat on the test: ") #gives you the option to cheat
+
+        if testInput == "yes": #if you cheat, your blank test will be replaced by a completed test
+            inventory.remove(item_test) 
+            inventory.append(item_test_c)
+
+        elif testInput == "no": 
+            inventory.remove(item_test)
+            inventory.append(item_test_w)
+
+        else:
+            print("Sorry, try again")
+
+    else:
+        print("You didn't pick up the test sheet.")
 
 def execute_command(command, timepoints):
     # This function takes a command and executes the correct function
@@ -308,6 +353,12 @@ def execute_command(command, timepoints):
             execute_check_time(command, timepoints)
         else:
             print("Check what?")
+
+    elif command[0] == "do": #the DO command for the DO function!
+        if len(command) > 1:
+            execute_do(command[1])
+        else:
+            print("Do what?")
 
     else:
         print("This makes no sense.")

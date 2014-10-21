@@ -41,15 +41,6 @@ item_pen = {
     "description": "A basic ballpoint pen, cheap as can be."
 }
 
-item_incompletelibrarytest = {
-    "id": "blank library test",
-    
-    "name": "blank library test",
-
-    "description": "A copy of the library test, it says you should complete this."
-}
-
-
 item_phone = {
     "id": "phone",
     
@@ -89,4 +80,24 @@ swipe_machine = {
     "description": "You can use your id card to declare your presents to certain rooms."
 }
 
+item_test = { #You pickup this test from the library
+    
+    "id": "test",
+    "name": "Blank library test",
+    "description": "This sheet contains questions on the Library."
+}
+
+item_test_c = { # cheated test - This will be added to inventory when the player chooses to cheat
+    
+    "id": "copiedtest", #placeholder name
+    "name": "Completed library test",
+    "description": "A test you have cheated on, hope no one finds out. You can drop this off in the Library to find your result."
+}
+
+item_test_w = { 
+    
+    "id": "completedtest", #placeholder name - This will be added to the inventory when the player chooses to work
+    "name": "Completed library test",
+    "description": "A test you have completed on your own. You can drop this off in the Library to find your result."
+}
 
