@@ -59,9 +59,9 @@ item_timetable = {
 }
 
 item_jd = {
-    "id": "jack_daniels",
+    "id": "jack",
     
-    "name": "a bottle of Jack Daniels",
+    "name": "bottle of Jack Daniels",
 
     "description": """A full bottle of Jack Daniels, the name of your roommate stuck to it with a lable. You peel off the lable and it looks good as new!
     """

@@ -45,7 +45,7 @@ room_robs = {
  
     "description":
     """You have arrived at Rob's room. These two Rob's have become infamous to you and you've only been here a few hours! You decide now would be the perfect time to get your laptop fixed as you've been unable to connect to the wifi until now, which is essential when it comes to your study. You knock and walk on in.""", 
-    "exits":  {"north": "canteen"},
+    "exits":  {"north": "Canteen"},
  
     "items": []
 }
@@ -71,7 +71,7 @@ room_canteen = {
     "description":
     """You decided that you would go to the canteen for lunch! Immediately you regret this decision and wish that you had gone to McDonalds instead. You sit alone at a table for four, eating your very sorry looking baguette which you paid a fortune for! At least now you have time to revise...""",
  
-    "exits":  {"south": "room_robs"},
+    "exits":  {"south": "Robs"},
  
     "items": []
 }
