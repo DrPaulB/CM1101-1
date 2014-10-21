@@ -302,14 +302,32 @@ def execute_do(item_id): # Function is only for the library test
         if testInput.lower() == "yes": #if you cheat, your blank test will be replaced by a completed test
             inventory.remove(item_test) 
             inventory.append(item_test_c)
-            currenttime = stats[0]
-            stats[0] = currenttime-1
+            x = stats[0]
+            stats[0] = x-0.5 # Updating time from choice
+
+            x = stats[1]
+            stats[1] = x+10 # Updating social points
+
+            x = stats[2] # Updating intelligance points
+            stats[2] = x-10
+
+            x = stats[3] # Updating energy
+            stats[3] = x-5
+
+
+
 
         elif testInput.lower() == "no": 
             inventory.remove(item_test)
             inventory.append(item_test_w)
-            currenttime = stats[0]
-            stats[0] = currenttime-1
+            x = stats[0]
+            stats[0] = x-1 # Updating time from choice
+
+            x = stats[2] # Updating intelligance points
+            stats[2] = x+10
+
+            x = stats[3] # Updating energy
+            stats[3] = x-10
 
 
         else:
