@@ -12,6 +12,7 @@ from random import uniform
 intelligencepoints = 50                     # Average score, doesn't change before users gameplay
 socialpoints = 20 
 
+
 def game_title():
     # Prints the title of the game in Askii art.
     
@@ -39,12 +40,13 @@ def print_introduction():
 
 As per normal, the first thought is to pull out your phone and check your emails, after all, you don't want to miss your daily chance to get $30,000,000,000 from that Zimbarbian prince...
 
-What?    An email from the bank... I spent how much on what?!?! Somehow in your drunken state you managed to sign up for a Computer Science course at Cardiff University, and you apparently start... TOMORROW.
+What? An email from the bank... I spent how much on what?!?! Somehow in your drunken state you managed to sign up for a Computer Science course at Cardiff University, and you apparently start... TOMORROW.
 
 Good Luck making it through your first day.
 
 
 """
+
     for x in line_1:
         print(x, end='')
         sys.stdout.flush()
@@ -143,7 +145,7 @@ def print_room_items(room): #Shaun George
         print(" ")
 
 
-def print_inventory_items(items): #Jason Choo
+def print_inventory_items(items):
     # This function takes a list of inventory items and displays it nicely, in a manner similar to print_room_items().
 
 
