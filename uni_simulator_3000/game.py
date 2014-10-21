@@ -189,11 +189,10 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
         print ("TAKE " + item["id"].upper() + " to take " + item["name"])
 
     try:
-        for item in inventory:
+        for item in inv_items:
             x = item['id']
-
-        if "phone" in x:
-            print("CHECK TIME on your phone")
+            if x == "phone":
+                print("CHECK TIME on your phone")
     except:
         return
 
@@ -272,10 +271,13 @@ def execute_check_time(command):
     try:
         for item in inventory:
             x = item['id']
-            if "phone" in x:
+            if x == "phone":
                 print("You have", stats[0], "hours until your meeting with Matt")
+                break
+        else:
+            print ("How are you planning to check the time? You don't have your phone?")
     except:
-        print ("How are you planning to check the time? You didn't bring your phone?")
+        print ("How are you planning to check the time? You don't have your phone?")
 
 
     
