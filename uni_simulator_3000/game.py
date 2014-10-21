@@ -143,10 +143,14 @@ def print_room_items(room): #Shaun George
         print(" ")
 
 
-def print_inventory_items(items): #Jason ChFoo
+def print_inventory_items(items): #Jason Choo
     # This function takes a list of inventory items and displays it nicely, in a manner similar to print_room_items().
 
-    print("You have " + list_of_items(items) + "." + "\n")
+
+    if not list_of_items(items):
+        print("You have " + "nothing on you" + "." + "\n")
+    else:
+        print("You have " + list_of_items(items) + "." + "\n") 
 
 
 def print_room(room): #Jamie Knowles
