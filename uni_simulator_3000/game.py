@@ -44,7 +44,7 @@ Good Luck making it through your first day.
     for x in line_1:
         print(x, end='')
         sys.stdout.flush()
-        sleep(uniform(0, 0))
+        sleep(uniform(0, 0.1))
 
 
 def energypoints(changevalue):
@@ -447,10 +447,15 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-# 
-# This is the entry point of our program
+
 def main():
-    # Running start up sequence, this will only happen once
+    ##################################################################################################################
+    ################################################STARTUP SEQUENCE##################################################
+    ##################################################################################################################
+                    # This code only runs at the beginning of the program, this 
+
+
+
     game_title()            # Shows title
     print_introduction()    # Shows introductory text
     timepoints = what_time_to_wake_up() #Allows user to decide hours in day
