@@ -7,7 +7,8 @@ from gameparser import *
 import sys
 from time import sleep
 from random import uniform
-
+intelligencepoints = 50                     # Average score, doesn't change before users gameplay
+socialpoints = 20 
 def game_title():
     # Prints the title of the game in Askii art.
     
@@ -120,19 +121,8 @@ def calculateenergy(timepoints):
 
 
 
-def list_of_items(items): #Jordan Cooke
-    """This function takes a list of items (see items.py for the definition) and
-    returns a comma-separated list of item names (as a string). For example:
-
-    >>> list_of_items([item_pen, item_handbook])
-    'a pen, a student handbook'
-    >>> list_of_items([item_id])
-    'id card'
-    >>> list_of_items([])
-    ''
-    >>> list_of_items([item_money, item_handbook, item_laptop])
-    'money, a student handbook, laptop'
-    """
+def list_of_items(items):
+    # This function takes a list of items (see items.py for the definition) and returns a comma-separated list of item names (as a string).
 
     itemslist = []
     for i in items:
@@ -141,27 +131,7 @@ def list_of_items(items): #Jordan Cooke
 
 
 def print_room_items(room): #Shaun George
-    """This function takes a room as an input and nicely displays a list of items
-    found in this room (followed by a blank line). If there are no items in
-    the room, nothing is printed. See map.py for the definition of a room, and
-    items.py for the definition of an item. This function uses list_of_items()
-    to produce a comma-separated list of item names. For example:
-
-    >>> print_room_items(rooms["Reception"])
-    There is a pack of biscuits, a student handbook here.
-    <BLANKLINE>
-
-    >>> print_room_items(rooms["Office"])
-    There is a pen here.
-    <BLANKLINE>
-
-    >>> print_room_items(rooms["Robs"])
-
-    (no output)
-
-    Note: <BLANKLINE> here means that doctest should expect a blank line.
-
-    """
+    # This function takes a room as an input and nicely displays a list of items found in this room (followed by a blank line).
     x = room['items']
    
     if list_of_items(x):
@@ -169,67 +139,15 @@ def print_room_items(room): #Shaun George
         print(i)
         print(" ")
 
-    pass
-
 
 def print_inventory_items(items): #Jason Choo
-    """This function takes a list of inventory items and displays it nicely, in a
-    manner similar to print_room_items(). The only difference is in formatting:
-    print "You have ..." instead of "There is ... here.". For example:
-    >>> print_inventory_items(inventory)
-    You have id card, laptop, money.
-    <BLANKLINE>
-    """
+    # This function takes a list of inventory items and displays it nicely, in a manner similar to print_room_items().
+
     print("You have " + list_of_items(items) + "." + "\n")
 
-    pass
 
 def print_room(room): #Jamie Knowles
-    """This function takes a room as an input and nicely displays its name
-    and description. The room argument is a dictionary with entries "name",
-    "description" etc. (see map.py for the definition). The name of the room
-    is printed in all capitals and framed by blank lines. Then follows the
-    description of the room and a blank line again. If there are any items
-    in the room, the list of items is printed next followed by a blank line
-    (use print_room_items() for this). For example:
-
-    >>> print_room(rooms["Office"])
-    <BLANKLINE>
-    THE GENERAL OFFICE
-    <BLANKLINE>
-    You are standing next to the cashier's till at
-    30-36 Newport Road. The cashier looks at you with hope
-    in their eyes. If you go west you can return to the
-    Queen's Buildings.
-    <BLANKLINE>
-    There is a pen here.
-    <BLANKLINE>
-
-    >>> print_room(rooms["Reception"])
-    <BLANKLINE>
-    RECEPTION
-    <BLANKLINE>
-    You are in a maze of twisty little passages, all alike.
-    Next to you is the School of Computer Science and
-    Informatics reception. The receptionist, Matt Strangis,
-    seems to be playing an old school text-based adventure
-    game on his computer. There are corridors leading to the
-    south and east. The exit is to the west.
-    <BLANKLINE>
-    There is a pack of biscuits, a student handbook here.
-    <BLANKLINE>
-
-    >>> print_room(rooms["Robs"])
-    <BLANKLINE>
-    ROBS' ROOM
-    <BLANKLINE>
-    You are leaning agains the door of the systems managers'
-    room. Inside you notice Rob Evans and Rob Davies. They
-    ignore you. To the north is the reception.
-    <BLANKLINE>
-
-    Note: <BLANKLINE> here means that doctest should expect a blank line.
-    """
+    # This function takes a room as an input and nicely displays its name and description.
     # Display room name
     print()
     print(room["name"].upper())
@@ -243,17 +161,7 @@ def print_room(room): #Jamie Knowles
 
 
 def exit_leads_to(exits, direction):
-    """This function takes a dictionary of exits and a direction (a particular
-    exit taken from this dictionary). It returns the name of the room into which
-    this exit leads. For example:
-
-    >>> exit_leads_to(rooms["Reception"]["exits"], "south")
-    "Robs' room"
-    >>> exit_leads_to(rooms["Reception"]["exits"], "east")
-    "your personal tutor's office"
-    >>> exit_leads_to(rooms["Tutor"]["exits"], "west")
-    'Reception'
-    """
+    # This function takes a dictionary of exits and a direction (a particular exit taken from this dictionary). It returns the name of the room into which this exit leads.
     return rooms[exits[direction]]["name"]
 
 
@@ -459,8 +367,6 @@ def main():
     game_title()                                # Plays the title Askii art to the user
     print_introduction()                        # Shows introductory text explaining the story to the user
     timepoints = what_time_to_wake_up()         # Determines what time the user wants to awake (changes difficulty of game)
-    intelligencepoints = 50                     # Average score, doesn't change before users gameplay
-    socialpoints = 20                           # Average score, doesn't change before users gameplay
     energypoints = calculateenergy(timepoints)  # Gives the user a set amount of energy depending on their wake time
 
 
