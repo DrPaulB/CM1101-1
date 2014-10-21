@@ -50,3 +50,23 @@ item_handbook = {
     "description": "This student handbook explains everything. Seriously."
 }
 
+item_timetable = {
+    "id": "timetable",
+    
+    "name": "todays timetable",
+
+    "description": """This sheet of paper appears to have todays timetable on it. You see you have nothing planned other than your meeting with Matt at 5.00pm.
+    It does however suggest you should perhaps revise for your test later, after all. That's the only way to win... right?
+    """
+}
+
+item_jd = {
+    "id": "jack_daniels",
+    
+    "name": "a bottle of Jack Daniels",
+
+    "description": """A full bottle of Jack Daniels, the name of your roommate stuck to it with a lable. You peel off the lable and it looks good as new!
+    """
+}
+
+
