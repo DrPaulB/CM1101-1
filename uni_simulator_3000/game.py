@@ -339,7 +339,10 @@ def execute_take(item_id): #Code not completed
         print(x)
 
 
-    pass
+    for item_dictionary in current_room["items"]:
+        if item_id == item_dictionary["id"]:
+            current_room["items"].remove(item_dictionary)
+            inventory.append(item_dictionary)
     
 
 def execute_drop(item_id): #Code not completed
@@ -347,7 +350,10 @@ def execute_drop(item_id): #Code not completed
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
-    pass
+    for item_dictionary in inventory: 
+        if item_id == item_dictionary["id"]:
+            current_room["items"].append(item_dictionary)
+            inventory.remove(item_dictionary)
     
 
 def execute_command(command):
