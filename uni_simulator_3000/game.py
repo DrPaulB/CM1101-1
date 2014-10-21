@@ -449,22 +449,21 @@ def move(exits, direction):
 
 
 def main():
-    ##################################################################################################################
-    ################################################STARTUP SEQUENCE##################################################
-    ##################################################################################################################
-                    # This code only runs at the beginning of the program, this 
+    ####################################################################################################################
+    ################################################# STARTUP SEQUENCE #################################################
+    ####################################################################################################################
+    # This code only runs at the beginning of the program, this declares all vairables and deals with showing the user #
+    #   all non recursive commands and functions. This sequence is also where the user determines their "difficulty"   #
+    ####################################################################################################################
+
+    game_title()                                # Plays the title Askii art to the user
+    print_introduction()                        # Shows introductory text explaining the story to the user
+    timepoints = what_time_to_wake_up()         # Determines what time the user wants to awake (changes difficulty of game)
+    intelligencepoints = 50                     # Average score, doesn't change before users gameplay
+    socialpoints = 20                           # Average score, doesn't change before users gameplay
+    energypoints = calculateenergy(timepoints)  # Gives the user a set amount of energy depending on their wake time
 
 
-
-    game_title()            # Shows title
-    print_introduction()    # Shows introductory text
-    timepoints = what_time_to_wake_up() #Allows user to decide hours in day
-    intelligencepoints = 50 # Normal assumption
-    socialpoints = 20 # Hopefully users arn't socially anxious
-    energypoints = calculateenergy(timepoints)
-
-
-    # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
         print_room(current_room)
@@ -478,9 +477,7 @@ def main():
 
 
 
-# Are we being run as a script? If so, run main().
-# '__main__' is the name of the scope in which top-level code executes.
-# See https://docs.python.org/3.4/library/__main__.html for explanation
+# The code that starts the whold thing.
 if __name__ == "__main__":
     main()
 
