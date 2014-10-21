@@ -222,8 +222,8 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     for item in room_items:
         print ("TAKE " + item["id"].upper() + " to take " + item["name"])
 
-        print("")
-        print("What do you want to do?")
+    print("")
+    print("What do you want to do?")
 
     pass
 
