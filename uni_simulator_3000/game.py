@@ -33,11 +33,13 @@ def print_introduction():
     line_1 = """You wake up, feeling highly drunk from the night before... What happened? you mutter to yourself as you pull your banging head out from the pillow.
 
 
-As per normal,      the first thought is to pull out your phone and check your emails,      after all, you don't want to miss your daily chance to get $30,000,000,000 from that Zimbarbian prince...
+As per normal, the first thought is to pull out your phone and check your emails, after all, you don't want to miss your daily chance to get $30,000,000,000 from that Zimbarbian prince...
 
-What?                An email from the bank...      I spent how much on what?!?!      Somehow in your drunken state you managed to sign up for a Computer Science course at Cardiff University,      and you apparently start...           TOMORROW.
+What?    An email from the bank... I spent how much on what?!?! Somehow in your drunken state you managed to sign up for a Computer Science course at Cardiff University, and you apparently start... TOMORROW.
 
 Good Luck making it through your first day.
+
+
 """
     for x in line_1:
         print(x, end='')
