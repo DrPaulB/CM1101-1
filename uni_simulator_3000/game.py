@@ -44,7 +44,7 @@ Good Luck making it through your first day.
     for x in line_1:
         print(x, end='')
         sys.stdout.flush()
-        sleep(uniform(0, 0.1))
+        sleep(uniform(0, 0.0))
 
 
 def energypoints(changevalue):
