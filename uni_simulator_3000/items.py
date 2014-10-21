@@ -41,6 +41,15 @@ item_pen = {
     "description": "A basic ballpoint pen, cheap as can be."
 }
 
+item_phone = {
+    "id": "phone",
+    
+    "name": "your mobile phone",
+
+    "description": "One of the most amazingly fast and small portable computers in the world... All you seem to use it for is browsing Reddit and checking the time."
+}
+
+
 item_handbook = {
     "id": "handbook",
     
