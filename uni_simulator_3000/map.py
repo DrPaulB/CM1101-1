@@ -1,11 +1,13 @@
 from items import *
  
-room_lecture = { #outside the lecture hall
+room_lecture = { #inside the lecture hall
  
     "name": "Lecture Hall",
  
     "description":
-    """You are inside T/2.09 lecture hall. You see a timetable on the table by the door. You also see a swiping device for your id card.""",
+    """You are inside T/2.09 lecture hall, a daunting room with a slight smell of damp... Perhaps that's down to the age of the building.
+    You see a timetable on the desk at the front of the room along with an assortment of junk left behind from other lectures.
+    You also see a swiping device for your id card, you think to yourself 'I wonder if anyone actually uses those pointless things...'""",
  
     "exits": {"north": "Library", "east": "Commonroom", "south": "Hallway", "west": "Outside"},
  
@@ -18,7 +20,9 @@ room_library = { #Library
     "name": "Library",
  
     "description":
-    """You are in the library, you see a vast collection of books. It is best to be quiet here.""",
+    """You are in the library, you see a vast collection of books in a very complicated order. There are also some computers, but as normal these are all being used and there is no room for you.
+    It is best to be quiet here as people are trying to study.
+    """,
  
     "exits":  {"south": "Lecturehall"},
  
@@ -30,7 +34,7 @@ room_hall = { #Hallway which leads to Robs/labs/Tutoroffice
     "name": "Hallway",
  
     "description":
-    """You are in a hallway. You can see that the hallway leads to the labs
+    """You are in one of the many hallways in the building. You can see that this perticular hallway leads to the computer labs
     if you go south, Robs room if you go east and the tutor room if you go west.""",
  
     "exits": {"east": "Robs", "south": "Labs", "west": "Tutor"},
@@ -44,8 +48,7 @@ room_robs = {
     "name": "Robs' room",
  
     "description":
-    """You are leaning against the door of the systems managers'
-    room. Inside you notice Rob Evans and Rob Davies. They
+    """You are leaning against the door of the systems managers' room. Inside you notice Rob Evans and Rob Davies. They
     ignore you. To the north is the Common Room.""",
  
     "exits":  {"north": "Commonroom"},
