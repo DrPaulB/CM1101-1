@@ -4,7 +4,45 @@ from map import rooms
 from player import *
 from items import *
 from gameparser import *
+import sys
+from time import sleep
+from random import uniform
 
+def game_title():
+    # Prints the title of the game in Askii art.
+    
+    print ("""
+
+  | | | |_ __ (_)_   _____ _ __ ___(_) |_ _   _ 
+  | | | | '_ \| \ \ / / _ \ '__/ __| | __| | | |
+  | |_| | | | | |\ V /  __/ |  \__ \ | |_| |_| |
+   \___/|_| |_|_| \_/ \___|_|  |___/_|\__|\__, |
+                                          |___/ 
+  ____  _                 _       _             
+ / ___|(_)_ __ ___  _   _| | __ _| |_ ___  _ __ 
+ \___ \| | '_ ` _ \| | | | |/ _` | __/ _ \| '__|
+  ___) | | | | | | | |_| | | (_| | || (_) | |   
+ |____/|_|_| |_| |_|\__,_|_|\__,_|\__\___/|_|   
+
+
+
+""")
+
+def print_introduction():
+    #This function prints out the starting text. Ignore the ugly formatting.
+    line_1 = """You wake up, feeling highly drunk from the night before... What happened? you mutter to yourself as you pull your banging head out from the pillow.
+
+
+As per normal,      the first thought is to pull out your phone and check your emails,      after all, you don't want to miss your daily chance to get $30,000,000,000 from that Zimbarbian prince...
+
+What?                An email from the bank...      I spent how much on what?!?!      Somehow in your drunken state you managed to sign up for a Computer Science course at Cardiff University,      and you apparently start...           TOMORROW.
+
+Good Luck making it through your first day.
+"""
+    for x in line_1:
+        print(x, end='')
+        sys.stdout.flush()
+        sleep(uniform(0, 0.1))
 
 
 def list_of_items(items): #Jordan Cooke
@@ -330,6 +368,8 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
+    game_title()
+    print_introduction()
 
     # Main game loop
     while True:
