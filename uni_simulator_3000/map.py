@@ -20,8 +20,10 @@ room_library = { #Library
     "name": "Library",
  
     "description":
-    """You are in the library, you see a vast collection of books in a very complicated order. There are also some computers, but as normal these are all being used and there is no room for you.
-    It is best to be quiet here as people are trying to study.
+    """You find yourself in the library, which you decide is unusual for someone as social as yourself.
+    The walls are lined with vast collections of books towering over you and you immediately feel like you’ll never begin to understand the classmark System,
+    let alone be able to complete this simple library test! Ah yes, the library test! How did you forget? You walk up to the counter and pick up a copy of the test from
+    the pleasent desk workers.
     """,
  
     "exits":  {"south": "Lecturehall"},
@@ -34,8 +36,8 @@ room_hall = { #Hallway which leads to Robs/labs/Tutoroffice
     "name": "Hallway",
  
     "description":
-    """You are in one of the many hallways in the building. You can see that this perticular hallway leads to the computer labs
-    if you go south, Robs room if you go east and the tutor room if you go west.""",
+    """You find yourself in the hallway. To you every single hallway with its bleached white walls seems exactly the same and you realise you have no idea where you’re actually going.
+    As it’s your first day you have become very disorientated and decide that the best course of action would be to ask the friendly PhD student approaching where exactly this hallway leads to!""",
  
     "exits": {"east": "Robs", "south": "Labs", "west": "Tutor"},
  
@@ -48,9 +50,9 @@ room_robs = {
     "name": "Robs' room",
  
     "description":
-    """You are leaning against the door of the systems managers' room. Inside you notice Rob Evans and Rob Davies. They
-    ignore you. To the north is the Common Room.""",
- 
+    """You have arrived at Rob’s room. These two Rob’s have become infamous to you and you’ve only been here a few hours!
+    You decide now would be the perfect time to get your laptop fixed as you’ve been unable to connect to the wifi until now,
+    which is essential when it comes to your study. You knock and walk on in.""", 
     "exits":  {"north": "canteen"},
  
     "items": []
@@ -63,10 +65,9 @@ room_tutor = {
     "name": "Your personal tutor's office",
  
     "description":
-    """You are in your personal tutor's office. He intently
-    stares at his huge monitor, ignoring you completely.
-    On the desk you notice a cup of coffee and an empty
-    pack of biscuits. The reception is to the west.""",
+    """It’s time for your first ever meeting with your personal tutor!
+    You wonder why you even bothered getting out of bed today, as this already seems pointless.
+    You and your fellow peers are gathered around a table in a secluded room, and your tutor finally arrives with the pack of biscuits that he bribed you all with.""",
  
     "exits": {"east": "Hallway"},
  
@@ -78,8 +79,9 @@ room_canteen = {
     "name": "Canteen",
  
     "description":
-    """You are in the canteen, you see the lunch lady waiting for you. You can also see a till where you have to 
-    pay for your food.""",
+    """You decided that you would go to the canteen for lunch!
+    Immediately you regret this decision and wish that you had gone to McDonalds instead.
+    You sit alone at a table for four, eating your very sorry looking baguette which you paid a fortune for! At least now you have time to revise...""",
  
     "exits":  {"south": "room_robs"},
  
@@ -91,7 +93,10 @@ outside = {
     "name": "Queens building",
  
     "description":
-    """You are outside the Queens bulding, you can walk home, got to McDonalds or go back inside""",
+    """You have arrived at the entrance to the Queens Building! The exterior of the building seems uninviting and cold.
+    The weather does little to contradict this.. typical.
+    You find that the only way to get to and from the building is by wading through the puddle that always seems to be there, regardless of the weather slightly improving.
+    Good job you wore some waterproof clothing! Why wouldn’t you? You did come to Wales after all..""",
  
     "exits": {"north": "Home", "south": "Mcdonalds", "east": "Lecturehall"},
  
@@ -117,7 +122,10 @@ room_flatmate = {
     "name" : "Your flatmate's room",
  
     "description":
-    """You walk into your flatmates room, there are numerous things on their desk.""",
+    """Just before you leave, you notice that your new flatmate has left their door unlocked.
+    You approach their room with caution and realise that no one is in.
+    As you go to close their door, the sunlight glistens through the window and the rays fall upon a new bottle of Jack.
+    You would love to get your hands on that.. it’s so satisfying to crack the seal on a new bottle.""",
  
     "exits": {"south": "Home"},
  
@@ -130,7 +138,9 @@ outside_mcdonalds = {
     "name" : "McDonalds",
  
     "description":
-    """The local McDonalds, you see a lot of students here on their break. You also see a cashier looking at you expectantly. You can go north to go back outside.""",
+    """You decided that venturing to McDonalds would be a much more satisfying meal, and that it would give you enough energy to get you through your first day of university!
+    You pull up to the window and roll down your window... A spotty faced teenager with no life goals takes your order.
+    You shudder and think that this could be you if you don’t revise hard enough. You make a mental commitment to take shorter lunch breaks in the future.""",
  
     "exits": {"north": "Outside"},
  
