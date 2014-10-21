@@ -109,7 +109,9 @@ outside_home = { # The main spawn point - where we wake up
     "name" : "Your room",
  
     "description":
-    """Your room in the university accommodation. You can go north to go into your flatmates room.""",
+    """You have entered your room. You flick on the light as the blinds remain shut after leaving in a bit of a rush this morning.
+    You didn't realise until now what a mess your room had become in such a short space of time, and that it is only further emphasised
+    by the lack of space that you have... but hey, that's the university life!""",
  
     "exits": {"north": "Flatmatesroom", "south": "Outside"},
  
