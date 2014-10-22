@@ -58,7 +58,13 @@ Good Luck making it through your first day.
 def change_value(a, b):
     return (a + b)
 
-
+def get_time():
+    time = 0
+    try:
+        time = int(input("Please type the hour you want to awaken [i.e.: 1.00pm would be '1']: "))
+    except:
+        pass
+    return time
 
 def what_time_to_wake_up():
     print ("WHAT TIME TO AWAKEN?")
@@ -71,11 +77,11 @@ def what_time_to_wake_up():
     print ("")
     print ("You can choose anywhere between 7.00am and 5.00pm, remember though... you have your meeting with Matt at 5.00pm, so it would be best to at least attempt to do something before then.")
     print ("")
-    timeofawakening = int(input("Please type the hour you want to awaken [i.e.: 1.00pm would be '1']: "))
+    timeofawakening = 0
     while timeofawakening not in [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5]:
         print ("That's not a suitable time... ")
+        timeofawakening = get_time()
 
-        timeofawakening = int(input("Please type the hour you want to awaken [i.e.: 1.00pm would be '1']: "))
     if timeofawakening == 7:
         hours_in_day = 10
     elif timeofawakening == 8:
