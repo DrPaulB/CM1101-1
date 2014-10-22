@@ -243,7 +243,7 @@ def execute_take(item_id):
 
 def execute_drop(item_id):
     # This function takes an item_id as an argument and moves this item from the player's inventory to list of items in the current room.
-    
+
     for x in inventory:  #Loops x through inventory
         i = x['id'] # i is assigned to x['name']
 
@@ -251,12 +251,13 @@ def execute_drop(item_id):
 
         if "copiedtest" in item_id and (current_room["name"] == 'Library'):  #checks whether the test is copied and whether the player is in the library (can only get the test graded in library)
             inventory.remove(item_test_c) #removes test from inventory
+            stats[2]
             testScore = 100 #if you cheat, you get a fixed 100% mark
             print("Your score out of a 100 is: ", testScore) #prints score
 
         elif "completedtest" in item_id and (current_room["name"] =='Library'):
             inventory.remove(item_test_w)
-            x = intelligencepoints(0) #x is assigned to the current value of intelligencepoints
+            x = stats[2] #x is assigned to the current value of intelligencepoints
             print("Your score out of a 100 is:", x) #grade depends on how much intelligence points you have
 
         else:
