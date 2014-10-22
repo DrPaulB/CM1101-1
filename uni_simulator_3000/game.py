@@ -296,10 +296,10 @@ def execute_take(item_id):
                 """)
 
             x = stats[1]
-            stats[0] = x-30
+            stats[1] = x-30
 
             x = stats[3]
-            stats[1] = x-10
+            stats[3] = x-10
 
             current_room['description'] = """Your roommates room, a cold hard reminder of the day you turned a criminal. Just by the window where the Jack Daniels that YOU STOLE was there is now a very empty space. You can't return the Jack anymore."""
 
