@@ -14,6 +14,7 @@ from random import uniform
 stats = [0, 20, 50, 0]
 
 
+
 def game_title():
     # Prints the title of the game in Askii art.
     
@@ -214,6 +215,9 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     if current_room['name'] in ["Lecture Hall", "Your personal tutor's office"]:
         print ("ATTEND to go to the event")
 
+    if current_room['name'] in ["Computer Labs"]:
+        print ("STUDY on the computer")
+
     elif current_room['name'] == "Canteen":
         print ("EAT to grab something to eat here")
     else:
@@ -365,6 +369,43 @@ def execute_revise():
     else:
         print ("How are you planning to revise here? Try your home or the library")
 
+def execute_study():
+    # Allows the user to revise for their test
+    global current_room
+    if current_room['name'] in ["Computer Labs"]:
+
+        print("""While you can, you think you should revise for your test later. This is afterall what being a student is all about... You think though, it will take about an hour to revise properly.
+
+        ###################################################################
+        DO REVISION: -Social | -Energy | +Intelligence | Time -1 hour
+        ###################################################################
+
+        """)
+        testInput = input("Do you really want to study on the computer? [Yes/No]: ") #gives you the option to eat or not
+        
+        if testInput.lower() == "yes": #if you choose to eat
+
+            print ("Ugh!, that was a drag... Still, you think you're becoming smarter.")
+            x = stats[0]
+            stats[0] = x-1 # Updating time from choice
+
+            x = stats[1]
+            stats[1] = x-10 # Updating social points
+
+            x = stats[3] # Updating energy
+            stats[3] = x-15
+
+            x = stats[2]
+            stats[2] = x+20
+
+        elif testInput.lower() == "no":
+            print ("Well, atleast you considered it! After all, it's the thought that counts!")
+
+        else:
+            print("I didn't understand that, try again.")
+    else:
+        print ("How are you planning to study here? Try the labs")
+
 
 def execute_attend():
     # Allows the user to revise for their test
@@ -403,7 +444,7 @@ def execute_attend():
         print("""Ah, good timing! Your personal tutor and all your co-tutees are here. Should you join in?
 
         ###################################################################
-        ATTEND MEETING: -Energy | + Intelligence | +Social | Time -1 hour 
+        ATTEND MEETING: -Energy | +Intelligence | +Social | Time -1 hour 
         ###################################################################
 
         """)
@@ -423,7 +464,6 @@ def execute_attend():
 
             x = stats[1]
             stats[2] = x+5
-
 
         elif testInput.lower() == "no":
             print ("Well, atleast you considered it! After all, it's the thought that counts!")
@@ -613,6 +653,9 @@ def execute_command(command):
     elif command[0] == "attend":
         execute_attend()
 
+    elif command[0] == "study":
+        execute_study()
+
 
     else:
         print("This makes no sense.")
@@ -656,7 +699,7 @@ def main():
 
     while True:
         # Display game status (room description, inventory etc.)
-        sleep(1.5) # delays the next stage
+        sleep(1.0) # delays the next stage
         print ("")
         print ("###################################################################")
         print_room(current_room)
