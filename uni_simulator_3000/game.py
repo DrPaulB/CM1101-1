@@ -360,6 +360,7 @@ def execute_examine(item_id): #examines items and prints item description
     for items in inventory:
         if item_id == items['id']:
             print(items['description'])
+            sleep(4)
 
 def quests_play(item_id):
     for items in inventory:
