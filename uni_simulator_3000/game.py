@@ -37,7 +37,7 @@ def game_title():
 
 def print_introduction():
     #This function prints out the starting text. Ignore the ugly formatting.
-    line_1 = """You wake up, feeling highly drunk from the night before... What happened? you mutter to yourself as you pull your banging head out from the pillow.
+    line_1 = """You wake up, feeling highly drunk from the night before... What happened? You mutter to yourself as you pull your banging head out from the pillow.
 
 
 As per normal, the first thought is to pull out your phone and check your emails, after all, you don't want to miss your daily chance to get $30,000,000,000 from that Zimbarbian prince...
