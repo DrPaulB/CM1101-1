@@ -257,22 +257,22 @@ def execute_drop(item_id):
     for x in inventory:  #Loops x through inventory
         i = x['id'] # i is assigned to x['name']
 
-    if item_id == x["id"]: #checks if the input is equal to the "name" of the item.
+        if item_id == x["id"]: #checks if the input is equal to the "name" of the item.
 
-        if "copiedtest" in item_id and (current_room["name"] == 'Library'):  #checks whether the test is copied and whether the player is in the library (can only get the test graded in library)
-            inventory.remove(item_test_c) #removes test from inventory
-            stats[2]
-            testScore = 100 #if you cheat, you get a fixed 100% mark
-            print("Your score out of a 100 is: ", testScore) #prints score
+            if "copiedtest" in item_id and (current_room["name"] == 'Library'):  #checks whether the test is copied and whether the player is in the library (can only get the test graded in library)
+                inventory.remove(item_test_c) #removes test from inventory
+                stats[2]
+                testScore = 100 #if you cheat, you get a fixed 100% mark
+                print("Your score out of a 100 is: ", testScore) #prints score
 
-        elif "completedtest" in item_id and (current_room["name"] =='Library'):
-            inventory.remove(item_test_w)
-            x = stats[2] #x is assigned to the current value of intelligencepoints
-            print("Your score out of a 100 is:", x) #grade depends on how much intelligence points you have
+            elif "completedtest" in item_id and (current_room["name"] =='Library'):
+                inventory.remove(item_test_w)
+                x = stats[2] #x is assigned to the current value of intelligencepoints
+                print("Your score out of a 100 is:", x) #grade depends on how much intelligence points you have
 
-        else:
-            current_room["items"].append(x) 
-            inventory.remove(x)
+            else:
+                current_room["items"].append(x) 
+                inventory.remove(x)
 
 
 def execute_read_timetable(items):
@@ -292,6 +292,42 @@ def execute_check_time(command):
             print ("How are you planning to check the time? You don't have your phone?")
     except:
         print ("How are you planning to check the time? You don't have your phone?")
+
+def execute_revise():
+    # Allows the user to revise for their test
+    global current_room
+    if current_room['name'] in ["Library", "Home"]:
+
+        print("""While you can, you think you should revise for your test later. This is afterall what being a student is all about... You think though, it will take about an hour to revise properly.
+
+        ###################################################################
+        DO REVISION: -Social | -Energy | +Intelligence | Time -1 hour
+        ###################################################################
+
+        """)
+        testInput = input("Do you really want to revise? [Yes/No]: ") #gives you the option to eat or not
+        
+        if testInput.lower() == "yes": #if you choose to eat
+
+            print ("Ugh!, that was a drag... Still, you think you're becoming smarter.")
+            x = stats[0]
+            stats[0] = x-1 # Updating time from choice
+
+            x = stats[1]
+            stats[1] = x-10 # Updating social points
+
+            x = stats[3] # Updating energy
+            stats[3] = x-15
+
+            x = stats[2]
+            stats[2] = x+20
+
+        elif testInput.lower() == "no":
+            print ("Well, atleast you considered it! After all, it's the thought that counts!")
+
+        else:
+            print("I didn't understand that, try again.")
+
 
 
 def execute_eat():
@@ -463,6 +499,9 @@ def execute_command(command):
 
     elif command[0] == "eat":
         execute_eat()
+
+    elif command[0] == "revise":
+        execute_revise()
 
 
     else:
