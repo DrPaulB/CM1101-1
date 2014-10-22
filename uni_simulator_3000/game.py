@@ -78,6 +78,7 @@ def what_time_to_wake_up():
     print ("You can choose anywhere between 7.00am and 5.00pm, remember though... you have your meeting with Matt at 5.00pm, so it would be best to at least attempt to do something before then.")
     print ("")
     timeofawakening = 0
+    timeofawakening = get_time()
     while timeofawakening not in [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5]:
         print ("That's not a suitable time... ")
         timeofawakening = get_time()
@@ -348,6 +349,7 @@ def execute_check_time(command):
             x = item['id']
             if x == "phone":
                 print("You have", stats[0], "hours until your meeting with Matt")
+                sleep(1)
                 break
         else:
             print ("How are you planning to check the time? You don't have your phone?")
