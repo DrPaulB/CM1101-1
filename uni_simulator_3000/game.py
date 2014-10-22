@@ -211,8 +211,8 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     if current_room['name'] == "McDonalds":
         print ("EAT to grab something to eat here")
 
-    if current_room['name'] == "Lecture Hall":
-        print ("ATTEND to go to Kirill's lecture on logic gates")
+    if current_room['name'] in ["Lecture Hall", "Your personal tutor's office"]:
+        print ("ATTEND to go to the event")
 
     elif current_room['name'] == "Canteen":
         print ("EAT to grab something to eat here")
@@ -372,8 +372,42 @@ def execute_attend():
 
         else:
             print("I didn't understand that, try again.")
+
+    elif current_room['name'] == "Your personal tutor's office":
+
+        print("""Ah, good timing! Your personal tutor and all your co-tutees are here. Should you join in?
+
+        ###################################################################
+        ATTEND MEETING: -Energy | + Intelligence | +Social | Time -1 hour 
+        ###################################################################
+
+        """)
+        testInput = input("Do you really want to go to this meeting? [Yes/No]: ") #gives you the option to go or not
+        
+        if testInput.lower() == "yes": #if you choose to
+
+            print ("Well that was pointless. But I guess I learned something.")
+            x = stats[0]
+            stats[0] = x-1 # Updating time from choice
+
+            x = stats[3] # Updating energy
+            stats[3] = x-5
+
+            x = stats[2]
+            stats[2] = x+5
+
+            x = stats[1]
+            stats[2] = x+5
+
+
+        elif testInput.lower() == "no":
+            print ("Well, atleast you considered it! After all, it's the thought that counts!")
+
+        else:
+            print("I didn't understand that, try again.")
+
     else:
-        print ("You need to be at T.2.09 to attend the lecture!")
+        print ("You need to be somewhere when an event is on to attend.")
 
 
 def execute_eat():
