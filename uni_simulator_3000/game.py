@@ -51,7 +51,7 @@ Good Luck making it through your first day.
     for x in line_1:
         print(x, end='')
         sys.stdout.flush()
-        sleep(uniform(0, 0.0))
+        sleep(uniform(0, 0.1))
 
 
 def change_value(a, b):
@@ -278,8 +278,6 @@ def execute_check_time(command):
             print ("How are you planning to check the time? You don't have your phone?")
     except:
         print ("How are you planning to check the time? You don't have your phone?")
-
-
     
 def execute_do(item_id): # Function is only for the library test
     """This function takes an argument and does an action relevant to the item e.g. "Do test" will make the user do the test """
