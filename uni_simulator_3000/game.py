@@ -214,6 +214,11 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     else:
         pass
 
+    if current_room['name'] in ["Library", "Home"]:
+        print ("REVISE to study for your test later at 5.00pm")
+
+    else:
+        pass
 
 
 
@@ -327,6 +332,8 @@ def execute_revise():
 
         else:
             print("I didn't understand that, try again.")
+    else:
+        print ("How are you planning to revise here? Try your home or the library")
 
 
 
