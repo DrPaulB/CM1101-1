@@ -172,41 +172,53 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     global current_room
     # This function displays the menu of available actions to the player. The
     
-
+ 
     print("You can:")
-
+ 
     # Iterate over available exits
     for direction in exits:
     # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
-
+ 
     for item in inv_items:
         x = item['name']
         if x == "Blank library test":
             print("DO TEST to complete your library test.") #Gives the option to the user to do the test
+            print("DROP " + item["id"].upper() + " to drop your " + item["name"])
+            print("EXAMINE " + item['id'].upper() + " to check what the item is")
+ 
+ 
+        elif x == "laptop with WiFi" or x == "laptop without WiFi":
+            print("BROWSE " + item["id"].upper() + " to browse the internet")
+            print("DROP " + item["id"].upper() + " to drop your " + item["name"])
+            print("EXAMINE " + item['id'].upper() + " to check what the item is")
+ 
+ 
+ 
         else:
-            print ("DROP " + item["id"].upper() + " to drop your " + item["name"])
-
+            print("DROP " + item["id"].upper() + " to drop your " + item["name"])
+            print("EXAMINE " + item['id'].upper() + " to check what the item is")
+ 
     for item in room_items:
         print ("TAKE " + item["id"].upper() + " to take " + item["name"])
-
+ 
     try:
         for item in inv_items:
             x = item['id']
             if x == "phone":
                 print("CHECK TIME on your phone")
+                
     except:
         return
-
+ 
     try:
         for item in inventory:
             x = item['id']
-
+ 
         if "timetable" in x:
             print("READ TIMETABLE to find out what you're doing")
     except:
         pass
-
 
 
     if current_room['name'] == "McDonalds":
@@ -309,6 +321,11 @@ def execute_drop(item_id):
             elif "jack" in item_id:
                 print("You can't drop this... You stole it, you don't want the police to find the evidence.") #grade depends on how much intelligence points you have
 
+            elif items['identifier'] == "brokenlaptop" and (current_room["name"] == "Robs' room"):
+                inventory.remove(item_laptop)
+                print("Your laptop has been returned to you with its WiFi setup! I could use this to kill some time")
+                inventory.append(item_laptop_f)
+
             else:
                 current_room["items"].append(x) 
                 inventory.remove(x)
@@ -331,6 +348,20 @@ def execute_check_time(command):
             print ("How are you planning to check the time? You don't have your phone?")
     except:
         print ("How are you planning to check the time? You don't have your phone?")
+
+def execute_examine(item_id): #examines items and prints item description
+    for items in inventory:
+        if item_id == items['id']:
+            print(items['description'])
+
+def quests_play(item_id):
+    for items in inventory:
+        if 'laptop with WiFi' == items['name']:
+            stats[0] = stats[0] - 0.5
+            print("Half an hour passes.. ")
+        elif 'laptop without WiFi' == items['name']:
+            print("I cant browse Reddit without WiFI!, I should take this to the Robs to get the WiFi setup.")
+                
 
 def execute_revise():
     # Allows the user to revise for their test
@@ -656,6 +687,17 @@ def execute_command(command):
     elif command[0] == "study":
         execute_study()
 
+    elif command[0] == "examine": 
+        if len(command) > 1:
+            execute_examine(command[1])
+        else:
+            print("Examine what?")
+ 
+    elif command[0] == "browse": 
+        if len(command) > 1:
+            quests_play(command[1])
+        else:
+            print("Browse what?") 
 
     else:
         print("This makes no sense.")

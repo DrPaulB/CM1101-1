@@ -9,11 +9,22 @@ item_id = {
 
 item_laptop = {
     "id": "laptop",
-
-    "name": "laptop",
-
+ 
+    "name": "laptop without WiFi",
+ 
     "description":
-    "Your laptop seems to have fallen down the stairs a few times... And it's refusing to connect to the internet. Studying will be difficult without it."
+    "Your laptop seems to have fallen down the stairs a few times... And it's refusing to connect to the internet. Studying will be difficult without it. I should drop this off at Robs.",
+    "identifier": "brokenlaptop"
+}
+ 
+item_laptop_f = {
+    "id": "laptop",
+ 
+    "name": "laptop with WiFi",
+ 
+    "description":
+    "A laptop which is connected to the university WiFi. I could kill some time by browsing the internet.",
+    "identifier": ""
 }
 
 item_money = {
