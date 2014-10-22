@@ -51,7 +51,7 @@ Good Luck making it through your first day.
     for x in line_1:
         print(x, end='')
         sys.stdout.flush()
-        sleep(uniform(0, 0.1))
+        sleep(uniform(0, 0.0))
 
 
 def change_value(a, b):
@@ -168,11 +168,12 @@ def print_exit(direction, leads_to):
 
 
 def print_menu(exits, room_items, inv_items): #Povilas Blusius
-
+    global current_room
     # This function displays the menu of available actions to the player. The
     
 
     print("You can:")
+
     # Iterate over available exits
     for direction in exits:
     # Print the exit name and where it leads to
@@ -203,7 +204,16 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
         if "timetable" in x:
             print("READ TIMETABLE to find out what you're doing")
     except:
-        return
+        pass
+
+    if current_room['name'] == "McDonalds":
+        print ("EAT to grab something to eat here")
+
+    elif current_room['name'] == "Canteen":
+        print ("EAT to grab something to eat here")
+    else:
+        pass
+
 
 
 
@@ -282,6 +292,81 @@ def execute_check_time(command):
             print ("How are you planning to check the time? You don't have your phone?")
     except:
         print ("How are you planning to check the time? You don't have your phone?")
+
+
+def execute_eat():
+    # Checks if the user is in a place of food, if so they eat
+    global current_room
+    if current_room['name'] == "McDonalds":
+        print("""Looking around, still deciding if you want to eat here, you catch sight of an employee spitting in a burger, 'ugh!'. Still, looks like their new horse burger will taste good, it's got extra cheese too!
+
+            Did you want to eat here?
+
+        ###################################################################
+        EAT AT McDONALDS: +Social | +Energy | Time -1 hour
+        ###################################################################
+
+        """)
+        testInput = input("Would you like to have a burger? [Yes/No]: ") #gives you the option to eat or not
+        
+        if testInput.lower() == "yes": #if you choose to eat
+
+            print ("Ah, much better! You feel slightly energised by that.")
+            x = stats[0]
+            stats[0] = x-1 # Updating time from choice
+
+            x = stats[1]
+            stats[1] = x+30 # Updating social points
+
+            x = stats[3] # Updating energy
+            stats[3] = x+20
+
+
+
+        elif testInput.lower() == "no": 
+
+            print ("Perhaps that's a good choice, afterall it would take ages to eat and you should be revising. You could also try the canteen?")
+
+        else:
+            print("I didn't understand that, try again.")
+
+    elif current_room['name'] == "Canteen":
+        print("""Right infront of you is a baguette. The bread has gone slightly gray and the ham inside looks dry, not to mention the cost of the damn thing! Still, it's better than nothing, and doesn't take long to eat.
+
+            Did you want to eat here?
+
+        ###################################################################
+        EAT AT CANTEEN: -Social | +Energy | Time -0.5 hour
+        ###################################################################
+
+        """)
+        testInput = input("Would you like to have a the roll? [Yes/No]: ") #gives you the option to eat or not
+        
+        if testInput.lower() == "yes": #if you choose to eat
+
+            print ("That tasted awful, You feel slightly energised by that anyway.")
+            x = stats[0]
+            stats[0] = x-0.5 # Updating time from choice
+
+            x = stats[1]
+            stats[1] = x-10 # Updating social points
+
+            x = stats[3] # Updating energy
+            stats[3] = x+20
+
+
+
+        elif testInput.lower() == "no": 
+
+            print ("Perhaps that's a good choice, that roll would probably give you something horrific... How about McDonalds down the road?")
+
+        else:
+            print("I didn't understand that, try again.")
+    else:
+        print ("Eat what? There is no food here.")
+
+
+
     
 def execute_do(item_id): # Function is only for the library test
     """This function takes an argument and does an action relevant to the item e.g. "Do test" will make the user do the test """
@@ -317,8 +402,6 @@ def execute_do(item_id): # Function is only for the library test
 
             x = stats[3] # Updating energy
             stats[3] = x-5
-
-
 
 
         elif testInput.lower() == "no": 
@@ -377,6 +460,10 @@ def execute_command(command):
             execute_do(command[1])
         else:
             print("Do what?")
+
+    elif command[0] == "eat":
+        execute_eat()
+
 
     else:
         print("This makes no sense.")

@@ -120,7 +120,7 @@ outside_mcdonalds = {
     "name" : "McDonalds",
  
     "description":
-    """You decided that venturing to McDonalds would be a much more satisfying meal, and that it would give you enough energy to get you through your first day of university! You pull up to the window and roll down your window... A spotty faced teenager with no life goals takes your order. You shudder and think that this could be you if you don't revise hard enough. You make a mental commitment to take shorter lunch breaks in the future.""",
+    """You find yourself in McDonalds. You walk up to the desk where A spotty faced teenager with no life goalswaits to take your order. You shudder and think that this could be you if you don't revise hard enough. You make a mental commitment to revise more in the future.""",
  
     "exits": {"north": "Outside"},
  
