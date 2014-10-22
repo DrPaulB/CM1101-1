@@ -259,6 +259,28 @@ def execute_take(item_id):
         if item_id == item_dictionary["id"]:
             current_room["items"].remove(item_dictionary)
             inventory.append(item_dictionary)
+
+
+    if current_room["name"] == "Your flatmate's room":
+        if "jack" not in current_room["items"]:
+            print ("""YOU STOLE YOUR ROOMMATES JACK DANIELS!
+
+        ###################################################################
+        THEIF: -Energy | -Social
+        ###################################################################
+
+        You feel bad, but tough! There is no going back now.
+
+                """)
+
+            x = stats[1]
+            stats[0] = x-30
+
+            x = stats[3]
+            stats[1] = x-10
+
+            current_room['description'] = """Your roommates room, a cold hard reminder of the day you turned a criminal. Just by the window where the Jack Daniels that YOU STOLE was there is now a very empty space. You can't return the Jack anymore."""
+
     
 
 def execute_drop(item_id):
@@ -279,6 +301,9 @@ def execute_drop(item_id):
                 inventory.remove(item_test_w)
                 x = stats[2] #x is assigned to the current value of intelligencepoints
                 print("Your score out of a 100 is:", x) #grade depends on how much intelligence points you have
+
+            elif "jack" in item_id:
+                print("You can't drop this... You stole it, you don't want the police to find the evidence.") #grade depends on how much intelligence points you have
 
             else:
                 current_room["items"].append(x) 

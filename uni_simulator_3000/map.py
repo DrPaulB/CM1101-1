@@ -107,7 +107,7 @@ room_flatmate = {
     "name" : "Your flatmate's room",
  
     "description":
-    """Just before you leave, you notice that your new flatmate has left their door unlocked. You approach their room with caution and realise that no one is in. As you go to close their door, the sunlight glistens through the window and the rays fall upon a new bottle of Jack. You would love to get your hands on that... it's so satisfying to crack the seal on a new bottle.""",
+    """You notice that your new flatmate has left their door unlocked. You approach their room with caution and assume that no one is in. As you go to close their door, the sunlight glistens through the window and the rays fall upon a new bottle of Jack. You would love to get your hands on that... it's so satisfying to crack the seal on a new bottle.""",
  
     "exits": {"south": "Home"},
  
