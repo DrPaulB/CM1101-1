@@ -462,6 +462,8 @@ def execute_eat():
             x = stats[3] # Updating energy
             stats[3] = x+20
 
+            current_room['description'] = """You find yourself in McDonalds yet again! You walk up to the desk where A spotty faced teenager who tut's at your repeat business. You look to the side of you as an obese patron of McDonalds waddles past, perhaps you shouldn't eat here too many more times."""
+
 
 
         elif testInput.lower() == "no": 
