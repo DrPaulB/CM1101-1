@@ -462,7 +462,7 @@ def execute_eat():
             x = stats[3] # Updating energy
             stats[3] = x+20
 
-            current_room['description'] = """You find yourself in McDonalds yet again! You walk up to the desk where A spotty faced teenager who tut's at your repeat business. You look to the side of you as an obese patron of McDonalds waddles past, perhaps you shouldn't eat here too many more times."""
+            current_room['description'] = """You find yourself in McDonalds yet again! You walk up to the desk where A new member of staff is stood. You don't think he could care less about your order. You take note of his nametag "Oliver" to complain to head office in the future. You look to the side of you as an obese patron of McDonalds waddles past, perhaps you shouldn't eat here too many more times."""
 
 
 
@@ -518,7 +518,7 @@ def execute_do(item_id): # Function is only for the library test
         item = (x['name'])
 
     if "Blank library test" in item: #checks if library test is in inventory
-        print("""You look at the paper, feeling confused you glance up to see you friend. He suggests you copy his test.
+        print("""You look at the paper, feeling confused you glance up to see you friend, Adam. He suggests you copy his test.
             You know using your better judgement you should do it properly but at the same time, cheating is quicker.
 
             ###################################################################
