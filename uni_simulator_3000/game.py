@@ -243,10 +243,12 @@ def execute_take(item_id):
 
 def execute_drop(item_id):
     # This function takes an item_id as an argument and moves this item from the player's inventory to list of items in the current room.
+    
     for x in inventory:  #Loops x through inventory
         i = x['id'] # i is assigned to x['name']
 
-    if item_id == i: #checks if the input is equal to the "name" of the item.
+    if item_id == x["id"]: #checks if the input is equal to the "name" of the item.
+
         if "copiedtest" in item_id and (current_room["name"] == 'Library'):  #checks whether the test is copied and whether the player is in the library (can only get the test graded in library)
             inventory.remove(item_test_c) #removes test from inventory
             testScore = 100 #if you cheat, you get a fixed 100% mark
@@ -254,12 +256,13 @@ def execute_drop(item_id):
 
         elif "completedtest" in item_id and (current_room["name"] =='Library'):
             inventory.remove(item_test_w)
-            y = intelligencepoints(0) #x is assigned to the current value of intelligencepoints
-            print("Your score out of a 100 is:", y) #grade depends on how much intelligence points you have
-    else:
-        current_room["items"].append(i) #something is buggy here, not a big issue. I'll take a look at it
-        inventory.remove(i)
-    
+            x = intelligencepoints(0) #x is assigned to the current value of intelligencepoints
+            print("Your score out of a 100 is:", x) #grade depends on how much intelligence points you have
+
+        else:
+            current_room["items"].append(x) 
+            inventory.remove(x)
+
 
 def execute_read_timetable(items):
     # Allows the user to read timetable
