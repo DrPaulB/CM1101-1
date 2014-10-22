@@ -206,8 +206,13 @@ def print_menu(exits, room_items, inv_items): #Povilas Blusius
     except:
         pass
 
+
+
     if current_room['name'] == "McDonalds":
         print ("EAT to grab something to eat here")
+
+    if current_room['name'] == "Lecture Hall":
+        print ("ATTEND to go to Kirill's lecture on logic gates")
 
     elif current_room['name'] == "Canteen":
         print ("EAT to grab something to eat here")
@@ -335,6 +340,40 @@ def execute_revise():
     else:
         print ("How are you planning to revise here? Try your home or the library")
 
+
+def execute_attend():
+    # Allows the user to revise for their test
+    global current_room
+    if current_room['name'] == "Lecture Hall":
+
+        print("""Ah, good timing! Kirill is just about to start another lecture on logic gates, You don't know if this is on the test though... It probably is.
+
+        ###################################################################
+        ATTEND LECTURE: -Energy | + or - Intelligence | Time -1.5 hours
+        ###################################################################
+
+        """)
+        testInput = input("Do you really want to learn about logic gates? [Yes/No]: ") #gives you the option to eat or not
+        
+        if testInput.lower() == "yes": #if you choose to eat
+
+            print ("Ugh!, not only did that take forever, but you feel more confused than before...")
+            x = stats[0]
+            stats[0] = x-1.5 # Updating time from choice
+
+            x = stats[3] # Updating energy
+            stats[3] = x-20
+
+            x = stats[2]
+            stats[2] = x-10
+
+        elif testInput.lower() == "no":
+            print ("Well, atleast you considered it! After all, it's the thought that counts!")
+
+        else:
+            print("I didn't understand that, try again.")
+    else:
+        print ("You need to be at T.2.09 to attend the lecture!")
 
 
 def execute_eat():
@@ -510,6 +549,9 @@ def execute_command(command):
     elif command[0] == "revise":
         execute_revise()
 
+    elif command[0] == "attend":
+        execute_attend()
+
 
     else:
         print("This makes no sense.")
@@ -553,6 +595,7 @@ def main():
 
     while True:
         # Display game status (room description, inventory etc.)
+        sleep(1.5) # delays the next stage
         print ("")
         print ("###################################################################")
         print_room(current_room)
